@@ -1,138 +1,220 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🌸 Radha Radha Jap Mala 🌸</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>🌸 Radha Naam Jap 🌸</title>
 
 <style>
+
+:root{
+--gold:#ffd700;
+--gold2:#ffb300;
+--cream:#fff8e1;
+--orange:#ff9800;
+--pink:#ff80ab;
+}
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
+font-family:system-ui,sans-serif;
 }
 
 body{
 height:100vh;
 overflow:hidden;
+background:
+radial-gradient(circle at top,#ffcc80,#ff8a65 40%,#6d4c41 100%);
 display:flex;
 justify-content:center;
 align-items:center;
+position:relative;
+}
+
+body::before{
+content:"";
+position:absolute;
+inset:0;
 background:
-linear-gradient(rgba(90,30,0,.35),rgba(90,30,0,.35)),
-linear-gradient(135deg,#ffcc80,#ff8a65,#f48fb1);
+radial-gradient(circle at 20% 20%,rgba(255,255,255,.15),transparent 25%),
+radial-gradient(circle at 80% 30%,rgba(255,255,255,.15),transparent 25%);
+}
+
+.ticker{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:12px 0;
+background:rgba(0,0,0,.15);
+backdrop-filter:blur(8px);
+overflow:hidden;
+z-index:100;
+}
+
+.ticker-text{
+white-space:nowrap;
+font-size:20px;
+font-weight:700;
+color:var(--cream);
+animation:scroll 35s linear infinite;
+}
+
+@keyframes scroll{
+from{transform:translateX(100%);}
+to{transform:translateX(-100%);}
 }
 
 .card{
-width:min(92vw,420px);
+width:min(92vw,430px);
 padding:30px;
-border-radius:30px;
-text-align:center;
-background:rgba(255,255,255,.15);
-backdrop-filter:blur(12px);
+border-radius:32px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(18px);
 border:1px solid rgba(255,255,255,.2);
-box-shadow:0 15px 40px rgba(0,0,0,.25);
+box-shadow:0 20px 60px rgba(0,0,0,.25);
+text-align:center;
 color:white;
 z-index:10;
 }
 
-h1{
+.title{
 font-size:2rem;
-margin-bottom:8px;
+margin-bottom:6px;
+}
+
+.subtitle{
+font-size:15px;
+opacity:.95;
+margin-bottom:20px;
 }
 
 .count{
-font-size:3.5rem;
-font-weight:bold;
-color:#ffe082;
+font-size:3.8rem;
+font-weight:800;
+color:var(--gold);
 text-shadow:0 0 20px gold;
-margin:15px 0;
+margin-bottom:15px;
 }
 
 .mala{
-font-size:1rem;
+font-size:18px;
 margin-bottom:15px;
-opacity:.9;
+color:var(--cream);
 }
 
-.tap-btn{
+.button{
 width:190px;
 height:190px;
 border:none;
 border-radius:50%;
 cursor:pointer;
 font-size:3rem;
-background:radial-gradient(circle,#ffd54f,#ff9800);
+background:
+radial-gradient(circle,var(--gold),var(--orange));
 box-shadow:
-0 0 25px rgba(255,193,7,.9),
-0 0 60px rgba(255,152,0,.7);
+0 0 25px rgba(255,215,0,.9),
+0 0 70px rgba(255,152,0,.8);
 transition:.15s;
 }
 
-.tap-btn:active{
+.button:active{
 transform:scale(.92);
+}
+
+.progress{
+margin-top:18px;
+font-size:18px;
+}
+
+.footer{
+margin-top:18px;
+font-size:18px;
+color:var(--cream);
 }
 
 .floating{
 position:absolute;
+font-size:26px;
 font-weight:bold;
-font-size:24px;
 color:white;
 pointer-events:none;
-animation:floatUp 2.4s linear forwards;
-text-shadow:0 0 15px gold;
+text-shadow:0 0 12px gold;
+animation:up 2.6s linear forwards;
 }
 
-@keyframes floatUp{
+@keyframes up{
 0%{
 opacity:1;
 transform:translateY(0) scale(.8);
 }
 100%{
 opacity:0;
-transform:translateY(-220px) scale(1.5);
+transform:translateY(-240px) scale(1.6);
 }
 }
 
 .petal{
 position:absolute;
 top:-20px;
-animation:fall linear forwards;
 pointer-events:none;
+animation:fall linear forwards;
 }
 
 @keyframes fall{
 to{
-transform:translateY(110vh) rotate(360deg);
+transform:
+translateY(120vh)
+rotate(360deg);
 }
 }
 
-.blessing{
-margin-top:18px;
-font-size:1.1rem;
-color:#fff8e1;
+.spark{
+position:absolute;
+width:4px;
+height:4px;
+border-radius:50%;
+background:gold;
+animation:twinkle 4s linear infinite;
 }
 
-.progress{
-margin-top:15px;
-font-size:18px;
+@keyframes twinkle{
+50%{
+transform:scale(2);
+opacity:.3;
 }
+}
+
 </style>
 </head>
+
 <body>
+
+<div class="ticker">
+<div class="ticker-text">
+🕉️ राधा • कृष्ण • राम • सीता • हनुमान • शिव • पार्वती • गणेश • दुर्गा • लक्ष्मी • सरस्वती • विष्णु • महादेव • राधे राधे • हरे कृष्ण • जय श्री राम • हर हर महादेव 🕉️
+</div>
+</div>
 
 <div class="card">
 
-<h1>🌸 राधा राधा 🌸</h1>
+<div class="title">🌸 राधा नाम जाप 🌸</div>
+
+<div class="subtitle">
+हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे
+</div>
 
 <div class="count" id="count">0</div>
 
 <div class="mala">
-108 जाप पूर्ण होने पर 🔔 घंटी बजेगी
+📿 108 जाप = 1 माला
 </div>
 
-<button id="tapBtn" class="tap-btn">
+<button class="button" id="tapBtn">
 📿
 </button>
 
@@ -140,116 +222,140 @@ font-size:18px;
 माला: 0 / 108
 </div>
 
-<div class="blessing">
-जय श्री राधे 🙏
+<div class="footer">
+🙏 जय श्री राधे 🙏
 </div>
 
 </div>
 
 <script>
 
-let count = Number(localStorage.getItem("radhaCount")) || 0;
+let count =
+Number(localStorage.getItem("radhaCount")) || 0;
 
-const countEl = document.getElementById("count");
-const progressEl = document.getElementById("progress");
+const countEl =
+document.getElementById("count");
 
-countEl.innerText = count;
+const progressEl =
+document.getElementById("progress");
+
+countEl.textContent=count;
+
 updateProgress();
 
 function updateProgress(){
-progressEl.innerText =
-"माला: " + (count % 108) + " / 108";
+progressEl.textContent=
+"माला: "+(count%108)+" / 108";
 }
 
-function speakRadha(){
+function speak(){
 
-if(!window.speechSynthesis) return;
+if(!("speechSynthesis" in window)) return;
 
 speechSynthesis.cancel();
 
-const msg = new SpeechSynthesisUtterance("राधा राधा");
+const msg =
+new SpeechSynthesisUtterance("राधा राधा");
 
-msg.lang = "hi-IN";
-msg.rate = 0.9;
-msg.pitch = 1.1;
-msg.volume = 1;
+msg.lang="hi-IN";
+msg.rate=.9;
+msg.pitch=1.1;
+msg.volume=1;
 
 speechSynthesis.speak(msg);
 }
 
-function templeBell(){
+function bell(){
 
-const ctx = new (window.AudioContext ||
+try{
+
+const ctx =
+new(window.AudioContext||
 window.webkitAudioContext)();
 
-const osc = ctx.createOscillator();
-const gain = ctx.createGain();
+const osc=ctx.createOscillator();
+const gain=ctx.createGain();
 
-osc.type = "sine";
-osc.frequency.value = 800;
+osc.type="sine";
+osc.frequency.value=850;
 
 osc.connect(gain);
 gain.connect(ctx.destination);
 
-gain.gain.setValueAtTime(0.4,ctx.currentTime);
+gain.gain.setValueAtTime(
+0.4,
+ctx.currentTime
+);
+
 gain.gain.exponentialRampToValueAtTime(
-0.001,
-ctx.currentTime + 2
+0.0001,
+ctx.currentTime+2
 );
 
 osc.start();
-osc.stop(ctx.currentTime + 2);
+osc.stop(ctx.currentTime+2);
+
+}catch(e){}
 }
 
-function createFloatingText(){
+function floatingText(){
 
-const t = document.createElement("div");
+const div=
+document.createElement("div");
 
-t.className="floating";
-t.innerText="राधा राधा 🌸";
+div.className="floating";
 
-t.style.left =
-(window.innerWidth/2 - 70 +
-Math.random()*140) + "px";
+div.innerText="राधा राधा 🌸";
 
-t.style.top =
-(window.innerHeight/2 + 50) + "px";
+div.style.left=
+(window.innerWidth/2-90+
+Math.random()*180)+"px";
 
-document.body.appendChild(t);
+div.style.top=
+(window.innerHeight/2)+"px";
+
+document.body.appendChild(div);
 
 setTimeout(()=>{
-t.remove();
-},2400);
+div.remove();
+},2600);
 }
 
-function flowerBurst(){
+function flowers(amount=12){
 
-for(let i=0;i<15;i++){
+for(let i=0;i<amount;i++){
 
-const p=document.createElement("div");
+const p=
+document.createElement("div");
 
 p.className="petal";
-p.innerHTML="🌸";
 
-p.style.left=Math.random()*100+"vw";
-p.style.fontSize=(16+Math.random()*18)+"px";
+p.innerHTML=
+Math.random()>.5?"🌸":"🌺";
+
+p.style.left=
+Math.random()*100+"vw";
+
+p.style.fontSize=
+(16+Math.random()*18)+"px";
+
 p.style.animationDuration=
-(3+Math.random()*4)+"s";
+(3+Math.random()*5)+"s";
 
 document.body.appendChild(p);
 
 setTimeout(()=>{
 p.remove();
-},7000);
+},8000);
 
 }
 }
 
-function tapJap(){
+function tap(){
 
 count++;
 
-countEl.innerText=count;
+countEl.textContent=count;
 
 localStorage.setItem(
 "radhaCount",
@@ -258,59 +364,62 @@ count
 
 updateProgress();
 
-speakRadha();
+speak();
 
-createFloatingText();
+floatingText();
 
-flowerBurst();
+flowers(10);
 
 navigator.vibrate?.(40);
 
-if(count % 108 === 0){
+if(count%108===0){
 
-templeBell();
+bell();
 
 setTimeout(()=>{
 
-const msg =
+const msg=
 new SpeechSynthesisUtterance(
 "एक माला पूर्ण हुई। जय श्री राधे।"
 );
 
 msg.lang="hi-IN";
+
 speechSynthesis.speak(msg);
 
 },1200);
+
 }
 }
 
 document
 .getElementById("tapBtn")
-.addEventListener("click",tapJap);
+.addEventListener("click",tap);
 
 setInterval(()=>{
+flowers(1);
+},900);
 
-const p=document.createElement("div");
+for(let i=0;i<40;i++){
 
-p.className="petal";
-p.innerHTML="🌸";
+const s=
+document.createElement("div");
 
-p.style.left=Math.random()*100+"vw";
-p.style.fontSize=(12+Math.random()*10)+"px";
-p.style.animationDuration=
-(8+Math.random()*6)+"s";
+s.className="spark";
 
-document.body.appendChild(p);
+s.style.left=
+Math.random()*100+"vw";
 
-setTimeout(()=>{
-p.remove();
-},14000);
+s.style.top=
+Math.random()*100+"vh";
 
-},700);
+s.style.animationDelay=
+Math.random()*5+"s";
+
+document.body.appendChild(s);
+}
 
 </script>
 
 </body>
 </html>
-
-
