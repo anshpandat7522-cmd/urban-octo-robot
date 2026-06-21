@@ -66,7 +66,16 @@ document.getElementById("reset").onclick=()=>{if(confirm("काउंटर र
   document.addEventListener('click', () => {
   document.getElementById('bgMusic').play().catch(() => {});
 }, { once: true });
-  
+  <audio id="bgMusic" loop autoplay>
+  <source src="kishori.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.addEventListener("click", () => {
+  const music = document.getElementById("bgMusic");
+  music.play().catch(() => {});
+}, { once: true });
+</script>
 </script>
 </body>
 </html>
