@@ -39,6 +39,9 @@ background:radial-gradient(circle,var(--g),var(--o))}
 <div id="progress">माला: 0 / 108</div>
 <div class="row"><button id="reset" class="reset">🔄 Reset</button></div>
 </div>
+  <audio id="bgMusic" autoplay loop>
+  <source src="kishori.mp3" type="audio/mpeg">
+</audio>
 <script>
 let count=+localStorage.getItem("radhaCount")||0;
 let mode="radhe";
@@ -60,6 +63,10 @@ f.style.left=(innerWidth/2)+"px"; f.style.top=(innerHeight/2)+"px"; document.bod
 if(count%108===0) bell();
 };
 document.getElementById("reset").onclick=()=>{if(confirm("काउंटर रीसेट करें?")){count=0;localStorage.setItem("radhaCount",0);upd();}};
+  document.addEventListener('click', () => {
+  document.getElementById('bgMusic').play().catch(() => {});
+}, { once: true });
+  
 </script>
 </body>
 </html>
